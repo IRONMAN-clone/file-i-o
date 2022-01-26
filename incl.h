@@ -49,39 +49,23 @@ int stream_open(const char* name,int m){
 void stream_read(int filed,char buffer[],size_t size)
 {
   // using read syscall
-  if(filed == -1){
-    printf("An Error occured stream_read(int filed) filed is -1\n");
-    printf("Breaking out can't open file\n");
-  }
   
-  else if(filed != -1){
     lseek(filed,0,SEEK_SET);
     read(filed,buffer,size);
-  }
+  
 }
 
 void stream_write(int filed,char msg[],size_t msgsize)
 {
-  if(filed == -1)
-  {
-    printf("Can't write in file filed is -1\n");
-  }
-  else if(filed != -1)
-  {
+
     write(filed,msg,msgsize);
-  }
+
 }
 
 void stream_end(int filed)
 {
-  if(filed == -1)
-  {
-    printf("No File is opened filed is -1. Can't Close!\n");
-  }
-  else if(filed != -1)
-  {
     close(filed);
-  }
+
 }
 
 #endif //INCL_H
