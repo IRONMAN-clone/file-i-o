@@ -1,10 +1,13 @@
 #ifndef INCL_H
 #define INCL_H
 
+// This is a custom header I am working onto
+
 #include <stdio.h>
 #include <unistd.h>
 #include <fcntl.h>
 
+// It is a custom integer to string function ( but the main part of this is later )
 void IntToString(int n,char data[], int len)
 {
   FILE *fp;
@@ -29,7 +32,7 @@ int power(int base, int expon)
   return t;
 }
 
-// FILE I/O
+// FILE I/O ( Here starts my custom FILE I/O )
 typedef struct syscallfilesys
 {
   int filed;
